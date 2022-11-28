@@ -2045,6 +2045,10 @@ progress {
   color: #6c757d;
   opacity: 1;
 }
+.form-control:-ms-input-placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
 .form-control::placeholder {
   color: #6c757d;
   opacity: 1;
@@ -2282,6 +2286,7 @@ textarea.form-control-lg {
   -webkit-appearance: none;
   appearance: none;
   -webkit-print-color-adjust: exact;
+  color-adjust: exact;
   print-color-adjust: exact;
 }
 .form-check-input[type=checkbox] {
@@ -2502,9 +2507,16 @@ textarea.form-control-lg {
 .form-floating > .form-control::-webkit-input-placeholder, .form-floating > .form-control-plaintext::-webkit-input-placeholder {
   color: transparent;
 }
+.form-floating > .form-control:-ms-input-placeholder, .form-floating > .form-control-plaintext:-ms-input-placeholder {
+  color: transparent;
+}
 .form-floating > .form-control::placeholder,
 .form-floating > .form-control-plaintext::placeholder {
   color: transparent;
+}
+.form-floating > .form-control:not(:-ms-input-placeholder), .form-floating > .form-control-plaintext:not(:-ms-input-placeholder) {
+  padding-top: 1.625rem;
+  padding-bottom: 0.625rem;
 }
 .form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown),
 .form-floating > .form-control-plaintext:focus,
@@ -2520,6 +2532,10 @@ textarea.form-control-lg {
 .form-floating > .form-select {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
+}
+.form-floating > .form-control:not(:-ms-input-placeholder) ~ label {
+  opacity: 0.65;
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
 .form-floating > .form-control:focus ~ label,
 .form-floating > .form-control:not(:placeholder-shown) ~ label,
@@ -2837,7 +2853,8 @@ textarea.form-control-lg {
   vertical-align: middle;
   cursor: pointer;
   -webkit-user-select: none;
-  user-select: none;
+  -ms-user-select: none;
+      user-select: none;
   border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
   border-radius: var(--bs-btn-border-radius);
   background-color: var(--bs-btn-bg);
@@ -5216,7 +5233,8 @@ textarea.form-control-lg {
 .btn-close:disabled, .btn-close.disabled {
   pointer-events: none;
   -webkit-user-select: none;
-  user-select: none;
+  -ms-user-select: none;
+      user-select: none;
   opacity: 0.25;
 }
 
@@ -8431,12 +8449,14 @@ textarea.form-control-lg {
 
 .user-select-auto {
   -webkit-user-select: auto !important;
-  user-select: auto !important;
+  -ms-user-select: auto !important;
+      user-select: auto !important;
 }
 
 .user-select-none {
   -webkit-user-select: none !important;
-  user-select: none !important;
+  -ms-user-select: none !important;
+      user-select: none !important;
 }
 
 .pe-none {
@@ -12150,4 +12170,4 @@ textarea.form-control-lg {
 
 /*# sourceMappingURL=ReactToastify.css.map */
 
-/*# sourceMappingURL=440.d54c38ed.css.map*/
+/*# sourceMappingURL=99.93208ab1.css.map*/
